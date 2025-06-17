@@ -1,7 +1,6 @@
 const express = require ("express")
 const cors = require ("cors")
 const mongoose= require("mongoose")
-const port = process.env.PORT || 4000 
 
 const app = express()
 //Install NodeMailer
