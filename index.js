@@ -7,9 +7,7 @@ const app = express()
 const nodemailer = require("nodemailer");
 app.use(express.json())
 app.use(cors({
-    origin: ["https://bulk-mail-app-frontend.vercel.app/"],
-        methods: ["POST", "GET"],
-        credentials: true
+    origin: "*"
 }))
 
 mongoose.connect("mongodb+srv://rahaman:12345@cluster0.ajbrlub.mongodb.net/passkey?retryWrites=true&w=majority&appName=Cluster0").then(function(){
