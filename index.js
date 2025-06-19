@@ -1,6 +1,8 @@
+require('dotenv').config();
 const express = require ("express")
 const cors = require ("cors")
 const mongoose = require("mongoose")
+
 
 const app = express()
 //Install NodeMailer
@@ -8,7 +10,8 @@ const nodemailer = require("nodemailer");
 app.use(express.json())
 app.use(cors())
 
-mongoose.connect("mongodb+srv://rahaman:12345@cluster0.ajbrlub.mongodb.net/passkey?retryWrites=true&w=majority&appName=Cluster0").then(function(){
+mongoose.connect(process.env.BULK_MAIL="mongodb+srv://rahaman:12345@cluster0.ajbrlub.mongodb.net/passkey?retryWrites=true&w=majority&appName=Cluster0")
+.then(function(){
     console.log("Connected to DB")
 }).catch(function(){
     console.log("Failed to connect");
